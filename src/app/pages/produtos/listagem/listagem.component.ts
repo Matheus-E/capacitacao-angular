@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './listagem.component.html',
   styleUrl: './listagem.component.css'
 })
-export class ListagemProdutosComponent {
 
+export class ListagemProdutosComponent {
+  valorInput: string = '';
 }
