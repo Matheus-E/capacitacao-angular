@@ -1,0 +1,28 @@
+<page-title title="Usuários"></page-title>
+
+<hr>
+<table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of lstUsuarios">
+        <th scope="row">{{usuario.id}}</th>
+        <td>{{usuario.nome}}</td>
+        <td>{{usuario.idade}}</td>
+        <td>{{usuario.ativo ? "Ativo" : "Inativo"}}</td>
+        <td>
+          <a [routerLink]="'/usuarios/editar/' + usuario.id" class="btn btn-secondary btn-sm ms-2">Editar</a>
+          <button type="button" class="btn btn-danger btn-sm ms-2" (click)="removerUsuario(usuario.id || 0)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a class="btn btn-info" routerLink="cadastrar">Cadastrar</a>

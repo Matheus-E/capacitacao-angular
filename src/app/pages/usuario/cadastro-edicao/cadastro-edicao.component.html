@@ -1,0 +1,25 @@
+<page-title *ngIf="id" title="Usuários / Editar"></page-title>
+<page-title *ngIf="!id" title="Usuários / Cadastrar"></page-title>
+
+
+<form [formGroup]="usuarioForm" (submit)="cadastrarEditarUsuarios()">
+    <div class="row">
+        <div class="col">
+            <div class="mb-3">
+                <label for="nomeUsuario" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nomeUsuario"formControlName="nome">
+                <div *ngIf="usuarioForm.get('nome')?.errors?.['required']" class="form-text text-danger">Campo nome é obrigatório.</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label for="idadeUsuario" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="idadeUsuario" formControlName="idade">
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="usuarioForm.invalid">
+        {{id > 0 ? 'Editar' : 'Salvar'}}
+    </button>
+</form>
