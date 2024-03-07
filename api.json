@@ -42,8 +42,29 @@
       "nome": "novoa",
       "codigoBarras": "5",
       "quantidade": 1,
-      "preco": 0,
+      "preco": 50.5,
       "id": "766a"
+    },
+    {
+      "nome": "cade",
+      "codigoBarras": "2",
+      "quantidade": 11,
+      "preco": 5005,
+      "id": "01a7"
+    },
+    {
+      "nome": "gs",
+      "codigoBarras": "3232",
+      "quantidade": 0,
+      "preco": 0.1,
+      "id": "4607"
+    },
+    {
+      "nome": "Produto31",
+      "codigoBarras": "12",
+      "quantidade": 12,
+      "preco": 500,
+      "id": "d7e6"
     }
   ]
 }

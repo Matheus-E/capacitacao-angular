@@ -13,7 +13,7 @@
         <div class="col">
             <div class="mb-3">
                 <label for="codBarProduto" class="form-label">Código de Barras</label>
-                <input id="codBarProduto" type="text" class="form-control" formControlName="codigoBarras" mask="RS 00,00">
+                <input id="codBarProduto" type="text" class="form-control" formControlName="codigoBarras">
                 <div *ngIf="produtoForm.get('codigoBarras')?.errors?.['required']" class="form-text text-danger">Campo obrigatório.</div>
             </div>
         </div>        
@@ -29,7 +29,7 @@
         <div class="col">
             <div class="mb-3"></div>
                 <label for="precoProduto" class="form-label">Preço</label>
-                <input type="number" class="form-control" id="precoProduto"formControlName="preco">
+                <input currencyMask class="form-control" id="precoProduto"formControlName="preco">
             <div *ngIf="produtoForm.get('preco')?.errors?.['required']" class="form-text text-danger">Campo obrigatório.</div>
         </div>
     </div>

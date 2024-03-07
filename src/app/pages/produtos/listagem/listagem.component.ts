@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component } from '@angular/core';
 import { IProduto } from 'src/app/interfaces/produto';
 import { ProdutosService } from 'src/app/services/produtos.service';
@@ -16,7 +17,7 @@ export class ListagemProdutosComponent {
   constructor(private produtosService: ProdutosService){}
 
   ngOnInit(){
-    this.produtosService.buscarTodosProdutos().subscribe(produtos => {
+    this.produtosService.buscarTodosProdutos().subscribe(produtos => {     
       this.lstProdutos = produtos;
     }, error => {
       console.error(error);
@@ -55,5 +56,9 @@ export class ListagemProdutosComponent {
         });
       }
     });
+  }
+
+  formatarPreco(preco: number){
+    return formatCurrency(preco, 'pt-BR', 'R$');
   }
 }
