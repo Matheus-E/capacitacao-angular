@@ -15,19 +15,19 @@ export class UsuariosService {
     return this.http.get<IUsuario[]>(this.api);
   }
 
-  buscarUsuarioPorId(id: number){
+  buscarUsuarioPorId(id: string){
     return this.http.get<IUsuario>(`${this.api}/${id}`);
   }
 
   cadastrarEditarUsuarios(usuario : IUsuario){
-    const idNumber = Number(usuario.id);
-    if(idNumber)
+    if(usuario.id != null)
     {
         return this.http.put(`${this.api}/${usuario.id}`, usuario);
-    }
+    }    
     return this.http.post(this.api, usuario);
   }
-  removerUsuario(id: number){
+
+  removerUsuario(id: string){
     return this.http.delete(`${this.api}/${id}`)
   }
 }

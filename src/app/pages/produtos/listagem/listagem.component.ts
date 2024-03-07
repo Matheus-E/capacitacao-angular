@@ -23,14 +23,14 @@ export class ListagemProdutosComponent {
     });
   }
 
-  removerProduto(id: number){
+  removerProduto(id: string){
     if (id != undefined) 
     {
       this.exibirConfirmacao(id);  
     }
   }
     
-  exibirConfirmacao(id: number){
+  exibirConfirmacao(id: string){
     Swal.fire({
       title: "Confirmar exclusão",
       text: "Você não poderá reverter isso!",

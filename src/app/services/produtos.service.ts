@@ -15,19 +15,19 @@ export class ProdutosService {
     return this.http.get<IProduto[]>(this.api);
   }
   
-  buscarProdutoPorId(id: number){
+  buscarProdutoPorId(id: string){
     return this.http.get<IProduto>(`${this.api}/${id}`);
   }
 
   cadastrarEditarProduto(produto : IProduto){
-    if(produto.id)
+    if(produto.id != null)
     {
-        return this.http.put(`${this.api}/${produto.id}`, produto);
+      return this.http.put(`${this.api}/${produto.id}`, produto);
     }
     return this.http.post(this.api, produto);
   }
 
-  removerProduto(id: number){
+  removerProduto(id: string){
     return this.http.delete(`${this.api}/${id}`)
   }
 }

@@ -9,7 +9,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./listagem.component.css']
 })
 export class ListagemUsuariosComponent {
-  //tituloPagina: string = 'Usuários';
   lstUsuarios: IUsuario[] = [];
   
   constructor(private usuariosService: UsuariosService){}
@@ -22,16 +21,14 @@ export class ListagemUsuariosComponent {
     });
   }
 
-  removerUsuario(id: number){
-    console.log(id);
+  removerUsuario(id: string){
     if(id != undefined)
     {
       this.exibirConfirmacao(id);     
-
     }
   }
 
-  exibirConfirmacao(id: number){
+  exibirConfirmacao(id: string){
     Swal.fire({
       title: "Confirmar exclusão",
       text: "Você não poderá reverter isso!",

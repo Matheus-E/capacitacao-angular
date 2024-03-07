@@ -20,6 +20,6 @@
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="usuarioForm.invalid">
-        {{id > 0 ? 'Editar' : 'Salvar'}}
+        {{id != '0' ? 'Editar' : 'Salvar'}}
     </button>
 </form>

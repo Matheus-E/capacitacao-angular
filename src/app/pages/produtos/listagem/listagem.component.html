@@ -15,14 +15,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let produto of lstProdutos">
-        <th scope="row">{{produto.id}}</th>
+        <td scope="row">{{produto.id}}</td>
         <td>{{produto.nome}}</td>
         <td>{{produto.codigoBarras}}</td>
         <td>{{produto.quantidade}}</td>
         <td>{{produto.preco}}</td>
         <td>
           <a [routerLink]="'/produtos/editar/' + produto.id" class="btn btn-secondary btn-sm ms-2">Editar</a>
-          <button type="button" class="btn btn-danger btn-sm ms-2" (click)="removerProduto(produto.id || 0)">Remover</button>
+          <button type="button" class="btn btn-danger btn-sm ms-2" (click)="removerProduto(produto.id || '0')">Remover</button>
         </td>
       </tr>
     </tbody>

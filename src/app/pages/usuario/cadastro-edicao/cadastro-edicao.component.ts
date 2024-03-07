@@ -19,16 +19,16 @@ export class CadastroEdicaoUsuarios {
     idade: new FormControl()
   });
 
-  id: number = 0;
+  id: string = '0';
 
   ngOnInit(){
     const id = this.route.snapshot.paramMap.get('id');
     try {
-      const idNumber = Number(id);
-      if(idNumber)
+      
+      if(id != null)
       {
-        this.id = idNumber;
-        this.usuarioService.buscarUsuarioPorId(idNumber).subscribe(usuario => {
+        this.id = id;
+        this.usuarioService.buscarUsuarioPorId(id).subscribe(usuario => {
           this.usuarioForm.patchValue({
           nome: usuario.nome,
           idade: usuario.idade
@@ -41,20 +41,18 @@ export class CadastroEdicaoUsuarios {
   }
   
   cadastrarEditarUsuarios(){
-    //console.log(this.usuarioForm.value);
     const usuario : IUsuario = this.usuarioForm.value as IUsuario;
     usuario.ativo = true;
 
-    if(this.id){
+    if(this.id != '0'){
       usuario.id = this.id;
     }
 
     this.usuarioService.cadastrarEditarUsuarios(usuario).subscribe(
     (result) => {
-      console.log(result);
       Swal.fire({
         title: "Sucesso!",
-        text: `Usuário ${this.id ? "atualizado" : "cadastrado"} com sucesso!`,
+        text: `Usuário ${this.id != '0' ? "atualizado" : "cadastrado"} com sucesso!`,
         icon: "success"
       });
     }, 
