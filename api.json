@@ -39,32 +39,25 @@
   ],
   "produtos": [
     {
-      "nome": "novoa",
-      "codigoBarras": "5",
+      "nome": "Produto_1",
+      "codigoBarras": "3219845",
       "quantidade": 1,
-      "preco": 50.5,
+      "preco": 50.05,
       "id": "766a"
     },
     {
-      "nome": "cade",
-      "codigoBarras": "2",
-      "quantidade": 11,
-      "preco": 5005,
-      "id": "01a7"
+      "id": "fb41",
+      "nome": "Produto_2",
+      "codigoBarras": "521612365",
+      "quantidade": 400,
+      "preco": 75
     },
     {
-      "nome": "gs",
-      "codigoBarras": "3232",
-      "quantidade": 0,
-      "preco": 0.1,
-      "id": "4607"
-    },
-    {
-      "nome": "Produto31",
-      "codigoBarras": "12",
-      "quantidade": 12,
-      "preco": 500,
-      "id": "d7e6"
+      "nome": "Produto_3",
+      "codigoBarras": "8519813213",
+      "quantidade": 5999,
+      "preco": 6000,
+      "id": "632f"
     }
   ]
 }

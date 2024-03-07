@@ -6,14 +6,14 @@
         <div class="col">
             <div class="mb-3">
                 <label for="nomeProduto" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nomeProduto"formControlName="nome">
+                <input type="text" class="form-control" id="nomeProduto"formControlName="nome" maxlength="100">
                 <div *ngIf="produtoForm.get('nome')?.errors?.['required']" class="form-text text-danger">Campo obrigatório.</div>
             </div>
         </div>
         <div class="col">
             <div class="mb-3">
                 <label for="codBarProduto" class="form-label">Código de Barras</label>
-                <input id="codBarProduto" type="text" class="form-control" formControlName="codigoBarras">
+                <input id="codBarProduto" type="text" class="form-control" formControlName="codigoBarras" maxlength="50"> 
                 <div *ngIf="produtoForm.get('codigoBarras')?.errors?.['required']" class="form-text text-danger">Campo obrigatório.</div>
             </div>
         </div>        
@@ -29,11 +29,12 @@
         <div class="col">
             <div class="mb-3"></div>
                 <label for="precoProduto" class="form-label">Preço</label>
-                <input currencyMask class="form-control" id="precoProduto"formControlName="preco">
+                <input currencyMask class="form-control" id="precoProduto"formControlName="preco" maxlength="20">
             <div *ngIf="produtoForm.get('preco')?.errors?.['required']" class="form-text text-danger">Campo obrigatório.</div>
         </div>
     </div>
 
+    <br>
     <button type="submit" class="btn btn-primary" [disabled]="produtoForm.invalid">
         {{id != '0' ? 'Editar' : 'Salvar'}}
     </button>
